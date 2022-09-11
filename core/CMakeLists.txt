@@ -1,6 +1,6 @@
 set(
         SOURCES_CORE
-        
+
 )
 
 add_library(
