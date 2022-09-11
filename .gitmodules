@@ -1,3 +1,6 @@
 [submodule "deps/json"]
 	path = deps/json
 	url = https://github.com/nlohmann/json
+[submodule "deps/libpqxx"]
+	path = deps/libpqxx
+	url = https://github.com/jtv/libpqxx
