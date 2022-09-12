@@ -16,6 +16,9 @@ message(STATUS "JSON include: ${INCLUDE_JSON}")
 # libpqxx library
 set(DIRECTORY_LIBPQXX ${PROJECT_SOURCE_DIR}/deps/libpqxx)
 set(INCLUDE_LIBPQXX ${DIRECTORY_LIBPQXX}/include)
+set(LIBRARY_LIBPQXX pqxx)
+
+add_subdirectory(${DIRECTORY_LIBPQXX})
 
 message(STATUS "LIBPQXX include: ${INCLUDE_LIBPQXX}")
 
@@ -25,8 +28,6 @@ find_package(Boost 1.71 REQUIRED filesystem)
 
 include_directories(${Boost_INCLUDE_DIRS})
 link_directories(${Boost_LIBRARY_DIRS})
-
-target_link_libraries(${Boost_LIBRARIES})
 
 
 # Core library
@@ -41,7 +42,7 @@ message(STATUS "Core library: ${LIBRARY_CORE}")
 
 # Service
 set(DIRECTORY_SERVICE ${PROJECT_SOURCE_DIR}/service)
-set(EXECUTABLE_SERVICE example)
+set(EXECUTABLE_SERVICE service)
 
 add_subdirectory(${DIRECTORY_SERVICE})
 message(STATUS "Service executable: ${EXECUTABLE_SERVICE}")

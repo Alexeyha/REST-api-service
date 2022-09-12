@@ -16,7 +16,6 @@ function(service_executable EXECUTABLE_SERVICE_NAME EXECUTABLE_SOURCES)
 
             ${PROJECT_SOURCE_DIR}
             ${INCLUDE_JSON}
-            ${INCLUDE_LIBPQXX}
     )
 
     target_link_libraries(
@@ -25,6 +24,7 @@ function(service_executable EXECUTABLE_SERVICE_NAME EXECUTABLE_SOURCES)
             ${LIBRARY_CORE}
             ${LIBRARY_JSON}
             ${LIBRARY_LIBPQXX}
+            ${Boost_LIBRARIES}
     )
 
 endfunction()

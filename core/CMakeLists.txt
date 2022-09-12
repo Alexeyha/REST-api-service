@@ -23,4 +23,5 @@ target_link_libraries(
 
         ${LIBRARY_JSON}
         ${LIBRARY_LIBPQXX}
+        ${Boost_LIBRARIES}
 )
