@@ -1,6 +1,7 @@
 set(
         SOURCES_CORE
 
+        datebase/Database.hpp datebase/Database.cpp
 )
 
 add_library(
@@ -14,10 +15,12 @@ target_include_directories(
 
         ${INCLUDE_CORE}
         ${INCLUDE_JSON}
+        ${INCLUDE_LIBPQXX}
 )
 
 target_link_libraries(
         ${LIBRARY_CORE}
 
         ${LIBRARY_JSON}
+        ${LIBRARY_LIBPQXX}
 )

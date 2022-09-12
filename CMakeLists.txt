@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.19)
-project(mad)
+project(rest-api)
 
 set(CMAKE_CXX_STANDARD 20)
 
@@ -11,6 +11,22 @@ set(DIRECTORY_JSON ${PROJECT_SOURCE_DIR}/deps/json)
 set(INCLUDE_JSON ${DIRECTORY_JSON}/include)
 
 message(STATUS "JSON include: ${INCLUDE_JSON}")
+
+
+# libpqxx library
+set(DIRECTORY_LIBPQXX ${PROJECT_SOURCE_DIR}/deps/libpqxx)
+set(INCLUDE_LIBPQXX ${DIRECTORY_LIBPQXX}/include)
+
+message(STATUS "LIBPQXX include: ${INCLUDE_LIBPQXX}")
+
+
+# Boost library
+find_package(Boost 1.71 REQUIRED filesystem)
+
+include_directories(${Boost_INCLUDE_DIRS})
+link_directories(${Boost_LIBRARY_DIRS})
+
+target_link_libraries(${Boost_LIBRARIES})
 
 
 # Core library
