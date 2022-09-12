@@ -1,6 +1,7 @@
 set(
         SOURCES_CORE
 
+        checker/Checker.hpp checker/Checker.cpp
         datebase/Database.hpp datebase/Database.cpp
 )
 
