@@ -24,7 +24,7 @@ message(STATUS "LIBPQXX include: ${INCLUDE_LIBPQXX}")
 
 
 # Boost library
-find_package(Boost 1.71 REQUIRED filesystem)
+find_package(Boost 1.7 REQUIRED filesystem)
 
 include_directories(${Boost_INCLUDE_DIRS})
 link_directories(${Boost_LIBRARY_DIRS})

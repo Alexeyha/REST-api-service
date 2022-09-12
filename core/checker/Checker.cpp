@@ -14,14 +14,14 @@ namespace rest_api::core {
         return !database->is_id_exist(id);
     }
 
-    bool Checker::is_id_correct(const std::string &id, const std::shared_ptr<Database> &database) noexcept {
+    std::string Checker::is_id_correct(const std::string &id, const std::shared_ptr<Database> &database) noexcept {
         if (id == "null") {
-            return false;
+            return "null";
         }
         if (!is_id_unique(id, database)) {
-            return false;
+            return "update";
         }
-        return true;
+        return "unique";
     }
 
     bool Checker::is_ids_unique_in_request(const std::vector<std::string> &ids) noexcept {

@@ -1,12 +1,23 @@
+#include "core/checker/Checker.hpp"
+#include "core/database/Database.hpp"
+#include "core/handler/Handler.hpp"
+
 #include <boost/beast.hpp>
 
 #include <memory>
 #include <utility>
+#include <iostream>
 
 namespace beast = boost::beast;
 namespace net = boost::asio;
 
 using tcp = boost::asio::ip::tcp;
+
+namespace rest_api::service {
+
+
+
+}
 
 int main() {
     net::io_context io_context;
@@ -17,4 +28,8 @@ int main() {
             io_context,
             tcp::endpoint(address, port)
     );
+
+    std::cout << "Hi from me.";
+
+
 }

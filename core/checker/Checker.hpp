@@ -17,7 +17,7 @@ namespace rest_api::core {
         [[nodiscard]] static bool is_id_unique(const std::string &id,
                                         const std::shared_ptr<Database> &database) noexcept;
 
-        [[nodiscard]] static bool is_id_correct(const std::string &id,
+        [[nodiscard]] static std::string is_id_correct(const std::string &id,
                                          const std::shared_ptr<Database> &database) noexcept;
 
         [[nodiscard]] static bool is_ids_unique_in_request(const std::vector<std::string> &ids) noexcept;
