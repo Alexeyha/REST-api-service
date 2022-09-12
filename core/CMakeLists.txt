@@ -2,7 +2,8 @@ set(
         SOURCES_CORE
 
         checker/Checker.hpp checker/Checker.cpp
-        datebase/Database.hpp datebase/Database.cpp
+        database/Database.hpp database/Database.cpp
+        handler/Handler.hpp handler/Handler.cpp
 )
 
 add_library(

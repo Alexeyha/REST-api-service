@@ -24,6 +24,8 @@ namespace rest_api::core {
 
         std::string get_parent_id(const std::string &id);
 
+        [[nodiscard]] std::string get_type(const std::string &id);
+
     private:
         pqxx::connection m_conn;
         std::string m_request;

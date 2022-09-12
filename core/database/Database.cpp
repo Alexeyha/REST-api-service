@@ -44,5 +44,16 @@ namespace rest_api::core {
         return session.query_value<std::string>(m_request);
     }
 
+    std::string Database::get_type(const std::string &id) {
+        if (!is_id_exist(id)) {
+            return "null";
+        }
+        m_request = "select type from items where id = '" + id + "';";
+
+        pqxx::work session(m_conn);
+
+        return session.query_value<std::string>(m_request);
+    }
+
 
 }
