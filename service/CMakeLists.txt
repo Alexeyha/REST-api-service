@@ -29,4 +29,5 @@ function(service_executable EXECUTABLE_SERVICE_NAME EXECUTABLE_SOURCES)
 
 endfunction()
 
+add_compile_options(-lpthread)
 service_executable(${EXECUTABLE_SERVICE} service.cpp)

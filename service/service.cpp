@@ -7,6 +7,7 @@
 #include <memory>
 #include <utility>
 #include <iostream>
+#include <thread>
 
 namespace beast = boost::beast;
 namespace net = boost::asio;
