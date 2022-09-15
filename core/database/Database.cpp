@@ -13,7 +13,7 @@ namespace rest_api::core {
 
         pqxx::work session(m_conn);
         session.exec(m_request);
-
+        session.commit();
 
     }
 
@@ -34,6 +34,7 @@ namespace rest_api::core {
 
         pqxx::work session(m_conn);
         session.exec(m_request);
+        session.commit();
     }
 
     std::string Database::get_parent_id(const std::string &id) {
