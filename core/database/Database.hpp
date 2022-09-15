@@ -1,6 +1,8 @@
 #ifndef REST_API_DATABASE_HPP
 #define REST_API_DATABASE_HPP
 
+#include <details/Item.hpp>
+
 #include <string>
 
 #include <pqxx/pqxx>
@@ -16,9 +18,7 @@ namespace rest_api::core {
     public:
         Database();
 
-        void import(const std::string &id, const std::string &url,
-                    const std::string &parent_id, int size,
-                    const std::string &type, const std::string &update_date) noexcept;
+        void import(const Item& item) noexcept;
 
         [[nodiscard]] bool is_id_exist(const std::string &id) noexcept;
 

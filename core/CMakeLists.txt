@@ -3,7 +3,11 @@ set(
 
         checker/Checker.hpp checker/Checker.cpp
         database/Database.hpp database/Database.cpp
+        details/Item.hpp
         handler/Handler.hpp handler/Handler.cpp
+        parser/Parser.hpp parser/Parser.cpp
+        server/Server.hpp server/Server.cpp
+
 )
 
 add_library(

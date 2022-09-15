@@ -25,12 +25,11 @@ namespace rest_api::core {
         return session.query_value<std::string>(m_request) == "t";
     }
 
-    void Database::import(const std::string &id, const std::string &url, const std::string &parent_id, int size,
-                          const std::string &type, const std::string &update_date) noexcept {
+    void Database::import(const Item& item) noexcept {
         m_request = "insert into items values ('"
-                    + id + "', '" + url + "', '" + "', '"
-                    + parent_id + "', " + std::to_string(size)
-                    + ", '" + type + "', '" + update_date + "');";
+                    + item.id + "', '" + item.url + "', '" + "', '"
+                    + item.parent_id + "', " + std::to_string(item.size)
+                    + ", '" + item.type + "', '" + item.time + "');";
 
         pqxx::work session(m_conn);
         session.exec(m_request);
