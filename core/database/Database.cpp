@@ -3,10 +3,10 @@
 namespace rest_api::core {
 
     Database::Database() : m_conn("dbname = rest_api") {
-        m_request = "CREATE TABLE IF NOT EXIST items("
+        m_request = "CREATE TABLE IF NOT EXISTS items("
                     "id text,"
                     "url text,"
-                    "parentId text"
+                    "parentId text,"
                     "size int,"
                     "type text,"
                     "updateDate text);";
